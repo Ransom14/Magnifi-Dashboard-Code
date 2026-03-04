@@ -31,10 +31,13 @@
     .announcements-container { border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .announcement-title { font-weight: bold; color: #2c3e50; font-size: 1.05em; margin-bottom: 12px; display: block; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; }
     .announcement-card { background: #fffde7; border-left: 4px solid #fbc02d; padding: 15px; border-radius: 4px; font-size: 0.9em; line-height: 1.5; color: #333; margin-bottom: 10px; }
-    .feedback-container { border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: #fdfdfd; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .feedback-title { font-weight: bold; color: #2c3e50; font-size: 1.05em; margin-bottom: 12px; display: block; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; }
-    .feedback-link { display: flex; align-items: center; gap: 8px; color: #0056b3; text-decoration: none; font-weight: 500; font-size: 0.9em; margin-bottom: 10px; background: #fff; padding: 12px; border: 1px solid #eee; border-radius: 6px; transition: all 0.2s ease; }
-    .feedback-link:hover { background: #f0f8ff; border-color: #bce0fd; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+    
+    /* Reusable Sidebar Box Style */
+    .sidebar-container { border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: #fdfdfd; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .sidebar-title { font-weight: bold; color: #2c3e50; font-size: 1.05em; margin-bottom: 12px; display: block; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; }
+    .sidebar-link { display: flex; align-items: center; gap: 8px; color: #0056b3; text-decoration: none; font-weight: 500; font-size: 0.9em; margin-bottom: 10px; background: #fff; padding: 12px; border: 1px solid #eee; border-radius: 6px; transition: all 0.2s ease; }
+    .sidebar-link:hover { background: #f0f8ff; border-color: #bce0fd; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+    
     .progress-section { margin-bottom: 20px; }
     .timeline-title { font-weight: bold; color: #2c3e50; font-size: 1.05em; margin-bottom: 8px; display: block; }
     .progress-bar-bg { background: #e9ecef; height: 16px; border-radius: 4px; border: 1px solid #ced4da; overflow: hidden; position: relative; }
@@ -47,8 +50,6 @@
     .session-details { font-size: 0.9em; color: #333; }
     .detail-item { margin-bottom: 10px; line-height: 1.4; }
     .detail-item strong { color: #2c3e50; }
-    .zoom-link { color: #0056b3; text-decoration: none; font-weight: 600; }
-    .zoom-link:hover { text-decoration: underline; color: #003d82; }
     .toggle-btn { background: #f8f9fa; border: 1px solid #ddd; color: #555; padding: 10px; width: 100%; text-align: left; font-weight: 600; font-size: 0.9em; cursor: pointer; border-radius: 6px; transition: background 0.2s; }
     .toggle-btn:hover { background: #e9ecef; }
     .future-container { display: none; flex-direction: column; gap: 5px; margin-top: 10px; padding: 0 5px; }
@@ -68,6 +69,14 @@
     </div>
 
     <div class="right-column">
+      
+      <div class="sidebar-container">
+        <span class="sidebar-title">💻 Live Class</span>
+        <a href="https://zoom.us/j/your-permanent-room-link" target="_blank" class="sidebar-link" style="background: #e3f2fd; border-color: #90caf9; font-weight: bold;">
+          📹 Join Tuesday Zoom Room
+        </a>
+      </div>
+
       <div class="announcements-container">
         <span class="announcement-title">📢 Course Announcements</span>
         <div class="announcement-card">
@@ -75,10 +84,11 @@
           Make sure you have completed the reading for this week before our Tuesday meeting. 
         </div>
       </div>
-      <div class="feedback-container">
-        <span class="feedback-title">🛠️ Help & Feedback</span>
-        <a href="#" target="_blank" class="feedback-link">📝 Content Feedback Form</a>
-        <a href="#" target="_blank" class="feedback-link">🐛 Report a Bug</a>
+      
+      <div class="sidebar-container">
+        <span class="sidebar-title">🛠️ Help & Feedback</span>
+        <a href="https://forms.gle/ZuRxyJckzZxQEj9BA" target="_blank" class="sidebar-link">📝 Content Feedback Form</a>
+        <a href="https://forms.gle/4FNX8UbDZTCnM14H7" target="_blank" class="sidebar-link">🐛 Report a Bug</a>
       </div>
     </div>
   </div>
@@ -108,20 +118,20 @@
     // THE DATA DICTIONARY: Fill out your 14 weeks here!
     // ==========================================
     const courseData = [
-      { description: "Welcome to the Transformational Entrepreneurship Lab Series! We will cover the fundamentals of ideation.", zoomLink: "https://zoom.us/j/your-link-here", notes: "N/A - First Session!" },
-      { description: "Deep dive into customer discovery and structuring your business model canvas.", zoomLink: "https://zoom.us/j/your-link-here", notes: "Last week we discussed finding your 'Why'. Make sure your value proposition is clear." },
-      { description: "Analyzing market viability and initial financial projections.", zoomLink: "https://zoom.us/j/your-link-here", notes: "Great discussion on customer pain points. Review the slides on early adopters." },
-      { description: "Details for Week 4", zoomLink: "https://zoom.us/", notes: "Notes from Week 3 will go here." },
-      { description: "Details for Week 5", zoomLink: "https://zoom.us/", notes: "Notes from Week 4 will go here." },
-      { description: "Details for Week 6", zoomLink: "https://zoom.us/", notes: "Notes from Week 5 will go here." },
-      { description: "Details for Week 7", zoomLink: "https://zoom.us/", notes: "Notes from Week 6 will go here." },
-      { description: "Details for Week 8", zoomLink: "https://zoom.us/", notes: "Notes from Week 7 will go here." },
-      { description: "Details for Week 9", zoomLink: "https://zoom.us/", notes: "Notes from Week 8 will go here." },
-      { description: "Details for Week 10", zoomLink: "https://zoom.us/", notes: "Notes from Week 9 will go here." },
-      { description: "Details for Week 11", zoomLink: "https://zoom.us/", notes: "Notes from Week 10 will go here." },
-      { description: "Details for Week 12", zoomLink: "https://zoom.us/", notes: "Notes from Week 11 will go here." },
-      { description: "Details for Week 13", zoomLink: "https://zoom.us/", notes: "Notes from Week 12 will go here." },
-      { description: "Details for Week 14", zoomLink: "https://zoom.us/", notes: "Notes from Week 13 will go here." }
+      { description: "Welcome to the Transformational Entrepreneurship Lab Series! We will cover the fundamentals of ideation.", notes: "N/A - First Session!" },
+      { description: "Deep dive into customer discovery and structuring your business model canvas.", notes: "Last week we discussed finding your 'Why'. Make sure your value proposition is clear." },
+      { description: "Analyzing market viability and initial financial projections.", notes: "Great discussion on customer pain points. Review the slides on early adopters." },
+      { description: "Details for Week 4", notes: "Notes from Week 3 will go here." },
+      { description: "Details for Week 5", notes: "Notes from Week 4 will go here." },
+      { description: "Details for Week 6", notes: "Notes from Week 5 will go here." },
+      { description: "Details for Week 7", notes: "Notes from Week 6 will go here." },
+      { description: "Details for Week 8", notes: "Notes from Week 7 will go here." },
+      { description: "Details for Week 9", notes: "Notes from Week 8 will go here." },
+      { description: "Details for Week 10", notes: "Notes from Week 9 will go here." },
+      { description: "Details for Week 11", notes: "Notes from Week 10 will go here." },
+      { description: "Details for Week 12", notes: "Notes from Week 11 will go here." },
+      { description: "Details for Week 13", notes: "Notes from Week 12 will go here." },
+      { description: "Details for Week 14", notes: "Notes from Week 13 will go here." }
     ];
 
     const startDate = new Date("2026-02-17T18:30:00-06:00"); 
@@ -147,7 +157,7 @@
       const isFuture = now < sessionDate;
 
       const dateLabel = sessionDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-      const weekData = courseData[i] || { description: "TBD", zoomLink: "#", notes: "TBD" };
+      const weekData = courseData[i] || { description: "TBD", notes: "TBD" };
 
       if (isActive) {
         activeFound = true;
@@ -159,7 +169,6 @@
             </div>
             <div class="session-details">
               <div class="detail-item"><strong>📝 Description:</strong> <br>${weekData.description}</div>
-              <div class="detail-item"><strong>📹 Meeting Link:</strong> <br><a href="${weekData.zoomLink}" target="_blank" class="zoom-link">🔗 Join Zoom Meeting</a></div>
               <div class="detail-item"><strong>⏪ Notes from Session ${i === 0 ? 'Orientation' : i}:</strong> <br>${weekData.notes}</div>
             </div>
           </div>
